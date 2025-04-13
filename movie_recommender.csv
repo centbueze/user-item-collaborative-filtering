@@ -1,0 +1,26 @@
+user_id,movie_id,title,genres,rating
+1,1,Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,4
+1,2,Jumanji (1995),Adventure|Children|Fantasy,3
+1,3,Grumpier Old Men (1995),Comedy|Romance,2
+1,4,Waiting to Exhale (1995),Comedy|Drama|Romance,5
+2,1,Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,5
+2,5,Father of the Bride Part II (1995),Comedy,4
+2,6,Heat (1995),Action|Crime|Thriller,4
+3,1,Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,3
+3,7,Sabrina (1995),Comedy|Romance,2
+3,8,Tom and Huck (1995),Adventure|Children,3
+4,2,Jumanji (1995),Adventure|Children|Fantasy,4
+4,9,Sudden Death (1995),Action,1
+4,10,GoldenEye (1995),Action|Adventure|Thriller,5
+5,11,"American President, The (1995)",Comedy|Drama|Romance,4
+5,12,Dracula: Dead and Loving It (1995),Comedy|Horror,3
+5,13,Balto (1995),Adventure|Animation|Children,5
+6,14,Nixon (1995),Drama,2
+6,15,Cutthroat Island (1995),Action|Adventure|Romance,3
+6,16,Casino (1995),Drama,4
+7,17,Sense and Sensibility (1995),Drama|Romance,5
+7,18,Four Rooms (1995),Comedy,3
+7,19,Ace Ventura: When Nature Calls (1995),Comedy,4
+8,20,Money Train (1995),Action|Comedy|Crime|Drama|Thriller,2
+8,21,Get Shorty (1995),Comedy|Crime|Thriller,4
+8,22,Copycat (1995),Crime|Drama|Horror|Mystery|Thriller,3

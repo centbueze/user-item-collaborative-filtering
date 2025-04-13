@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- Header -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">🎬 Movie Recommender</h1>
+        <p class="lead text-muted">Enter your User ID below to get personalized movie recommendations</p>
+    </div>
+
+    <!-- User ID Form -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <form method="POST" action="/">
+                        <div class="mb-3">
+                            <label for="user_id" class="form-label fw-semibold">User ID</label>
+                            <input type="text" class="form-control" id="user_id" name="user_id" placeholder="e.g., 123" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Get Recommendations</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error message -->
+    {% if error_message %}
+    <div class="mt-4 text-center">
+        <div class="alert alert-danger" role="alert">
+            ❌ {{ error_message }}
+        </div>
+    </div>
+
+    <!-- Recommendations -->
+    {% elif recommendations is not none and not recommendations.empty %}
+    <div class="mt-5">
+        <h3 class="fw-semibold mb-4">Recommended Movies</h3>
+        <div class="table-responsive shadow-sm">
+            <table class="table table-striped table-bordered align-middle">
+                <thead class="table-primary">
+                    <tr>
+                        <th scope="col">🎥 Title</th>
+                        <th scope="col">📺 Type</th>
+                        <th scope="col">⭐ Rating</th>
+                        <th scope="col">📊 Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for index, row in recommendations.iterrows() %}
+                    <tr>
+                        <td>{{ row['title'] }}</td>
+                        <td>{{ row['type'] }}</td>
+                        <td>{{ row['rating'] }}</td>
+                        <td>{{ row['score'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

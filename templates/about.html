@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container py-5 d-flex justify-content-center">
+  <div class="col-lg-10 mx-auto">
+    <h1 class="mb-4 text-center">🎬 About the Application</h1>
+
+    <p><strong>Netflix-Style Recommendation System (User-Based Collaborative Filtering)</strong></p>
+    <p>
+      This application is a personalized recommendation engine that suggests TV shows and movies based on a user’s past interactions and the preferences of similar users. Built using the Flask web framework, it demonstrates how collaborative filtering can be effectively used to enhance content discovery in a scalable and intelligent way.
+    </p>
+
+    <h4 class="mt-4">🔧 How It Works</h4>
+    <p>
+      The system uses <strong>user-to-user collaborative filtering</strong>. When a user enters their ID, the system compares their interaction history with other users to find the most similar viewing patterns. Based on this, it recommends titles that similar users have rated or interacted with — but the original user hasn’t seen yet.
+    </p>
+    <p>
+      All user interactions are preprocessed and stored as a <strong>user-item matrix</strong>, while a <strong>cosine similarity matrix</strong> is used to identify similar users. These matrices are precomputed and loaded at runtime for fast, efficient recommendations.
+    </p>
+
+    <h4 class="mt-4">💡 Key Features</h4>
+    <ul>
+      <li><strong>Personalized Recommendations:</strong> Based on real user behavior — not just metadata.</li>
+      <li><strong>Fast Performance:</strong> Precomputed matrices enable real-time suggestions.</li>
+      <li><strong>Error Handling:</strong> Graceful feedback for invalid or unknown user IDs.</li>
+      <li><strong>Simple UI:</strong> Clean and intuitive form for quick access to recommendations.</li>
+    </ul>
+
+    <h4 class="mt-4">🧠 Behind the Scenes</h4>
+    <p><strong>Backend:</strong></p>
+    <ul>
+      <li>Python & Flask – For server-side logic and routing.</li>
+      <li>Scikit-learn – To calculate cosine similarity between users.</li>
+      <li>Joblib – To store and load preprocessed data efficiently.</li>
+    </ul>
+
+    <p><strong>Data:</strong></p>
+    <ul>
+      <li>Interaction data stored in <code>.pkl</code> files.</li>
+      <li>Movie/show metadata retrieved from a structured CSV file.</li>
+    </ul>
+
+    <p><strong>Recommendation Logic:</strong></p>
+    <ol>
+      <li>Identify users with the most similar behavior.</li>
+      <li>Find shows/movies they’ve watched that the current user hasn’t.</li>
+      <li>Rank unseen content based on group preferences.</li>
+      <li>Return top suggestions with relevant info.</li>
+    </ol>
+
+    <h4 class="mt-4">📦 Use Cases</h4>
+    <ul>
+      <li><strong>Streaming Platforms:</strong> For scalable, personalized content delivery.</li>
+      <li><strong>Media Discovery:</strong> Helps users explore new content via social behavior.</li>
+      <li><strong>Education:</strong> A real-world demo of collaborative filtering for students and researchers.</li>
+    </ul>
+
+    <h4 class="mt-4">🚀 Looking Ahead</h4>
+    <ul>
+      <li>Introduce hybrid filtering by combining collaborative and content-based approaches.</li>
+      <li>Enhance recommendations using metadata such as cast, genres, and descriptions.</li>
+      <li>Integrate external APIs (TMDB, IMDb) for richer data insights.</li>
+      <li>Add user authentication for persistent, personalized sessions.</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
